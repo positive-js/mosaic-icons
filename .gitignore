@@ -1,5 +1,7 @@
 .idea
+Sketch.app
 dist
+*.zip
 
 # Logs
 logs
