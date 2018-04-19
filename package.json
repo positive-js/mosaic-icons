@@ -1,29 +1,27 @@
 {
-  "name": "@ptsecurity/mosaic-icons",
-  "version": "2.4.0",
-  "description": "Icons for Mosaic",
-  "scripts": {
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/positive-js/mosaic-icons.git"
-  },
-  "keywords": [
-    "Mosaic"
-  ],
-  "author": "Positive Technologies",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/positive-js/mosaic-icons/issues"
-  },
-  "homepage": "https://github.com/positive-js/mosaic-icons#readme",
-  "devDependencies": {
-    "grunt": "1.0.2",
-    "grunt-shell": "^2.1.0",
-    "grunt-sketch": "1.0.5",
-    "grunt-webfont": "1.6.0",
-    "grunt-rename-util": "1.0.0",
-    "grunt-text-replace": "^0.4.0"
-  }
+    "name": "@ptsecurity/mosaic-icons",
+    "version": "2.4.0",
+    "description": "Icons for Mosaic",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/positive-js/mosaic-icons.git"
+    },
+    "keywords": [
+        "Mosaic"
+    ],
+    "author": "Positive Technologies",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/positive-js/mosaic-icons/issues"
+    },
+    "homepage": "https://github.com/positive-js/mosaic-icons#readme",
+    "devDependencies": {
+        "grunt": "1.0.2",
+        "grunt-shell": "^2.1.0",
+        "grunt-sketch": "1.0.5",
+        "grunt-webfont": "1.6.0",
+        "grunt-rename-util": "1.0.0",
+        "grunt-text-replace": "^0.4.0"
+    }
 }

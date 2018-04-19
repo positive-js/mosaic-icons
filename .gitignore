@@ -1,6 +1,7 @@
 .idea
 Sketch.app
 dist
+build
 *.zip
 
 # Logs
@@ -61,4 +62,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
