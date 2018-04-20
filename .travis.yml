@@ -20,7 +20,7 @@ matrix:
       before_script:
         - nvm install 8
       script:
-        - curl -L -o sketch.zip http://www.sketchapp.com/static/download/sketch-49.3-51167.zip
+        - curl -L -o sketch.zip http://www.sketchapp.com/static/download/sketch.zip
         - unzip -qo sketch.zip
         - export PATH=$PWD/Sketch.app/Contents/Resources/sketchtool/bin:$PATH
         - echo $PATH
@@ -28,3 +28,11 @@ matrix:
         - npm install -g grunt-cli
         - npm install
         - grunt
+
+deploy:
+  provider: npm
+  email: positivejs@ptsecurity.com
+  api_key:
+    secure: $NPM_TOKEN
+  on:
+    tags: true
