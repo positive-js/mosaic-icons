@@ -22,12 +22,15 @@ script:
   - npm install -g grunt-cli
   - npm install
   - grunt
+
+after_success:
+  - npm pack
+
 deploy:
-  - provider: script
+  - provider: npm
+    skip_cleanup: true
     email: positivejs@ptsecurity.com
-    script: "npm publish"
     api_key: $NPM_TOKEN
     on:
       branch: master
       tags: true
-    skip_cleanup: true
