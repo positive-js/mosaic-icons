@@ -1,1 +1,1 @@
-# mosaic-icons
+# Mosaic Icons

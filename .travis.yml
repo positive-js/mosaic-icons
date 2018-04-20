@@ -1,38 +1,33 @@
-
-
+language: objective-c
+os: osx
+osx_image: xcode8.3
+node_js: 8
+cache:
+  directories:
+    - ./node_modules/
+    - $HOME/Library/Caches/Homebrew
 branches:
   only:
     - master
-
-
-matrix:
-  include:
-    - language: objective-c
-      os: osx
-      osx_image: xcode8.3
-      node_js: 8
-      cache:
-        directories:
-          - ./node_modules/
-          - $HOME/Library/Caches/Homebrew
-      install:
-        - brew install ttfautohint fontforge --with-python
-      before_script:
-        - nvm install 8
-      script:
-        - curl -L -o sketch.zip http://www.sketchapp.com/static/download/sketch.zip
-        - unzip -qo sketch.zip
-        - export PATH=$PWD/Sketch.app/Contents/Resources/sketchtool/bin:$PATH
-        - echo $PATH
-        - sketchtool -v
-        - npm install -g grunt-cli
-        - npm install
-        - grunt
-
+install:
+  - brew install ttfautohint fontforge --with-python
+before_script:
+  - nvm install 8
+script:
+  - curl -L -o sketch.zip http://www.sketchapp.com/static/download/sketch.zip
+  - unzip -qo sketch.zip
+  - export PATH=$PWD/Sketch.app/Contents/Resources/sketchtool/bin:$PATH
+  - echo $PATH
+  - sketchtool -v
+  - npm install -g grunt-cli
+  - npm install
+  - grunt
 deploy:
-  provider: npm
-  email: positivejs@ptsecurity.com
-  api_key:
-    secure: $NPM_TOKEN
-  on:
-    tags: true
+  - provider: script
+    email: positivejs@ptsecurity.com
+    script: "npm publish"
+    api_key: $NPM_TOKEN
+    on:
+      branch: master
+      tags: true
+    skip_cleanup: true

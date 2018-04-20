@@ -15,6 +15,9 @@
     "bugs": {
         "url": "https://github.com/positive-js/mosaic-icons/issues"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "homepage": "https://github.com/positive-js/mosaic-icons#readme",
     "devDependencies": {
         "grunt": "1.0.2",
