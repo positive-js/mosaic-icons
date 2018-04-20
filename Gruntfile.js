@@ -1,4 +1,3 @@
-const path = require('path');
 
 const PATH_BUILD_ICONS = './build/icons',
     PATH_DIST_FONTS = './dist/fonts',
@@ -9,7 +8,6 @@ const SKETCH_FILE_DEF = 'mc-icons-iconset.sketch';
 
 
 module.exports = function (grunt) {
-    'use strict';
 
     let sketch_file = grunt.option('file');
 
@@ -36,9 +34,10 @@ module.exports = function (grunt) {
                 src: PATH_BUILD_ICONS + '/*.svg',
                 dest: PATH_DIST_FONTS,
                 destCss: PATH_DIST_STYLES,
+                destScss: PATH_DIST_STYLES,
                 options: {
                     relativeFontPath: PATH_DIST_FONTS,
-                    stylesheet: 'less',
+                    stylesheets: ['less', 'scss'],
                     htmlDemo: true,
                     destHtml: PATH_DIST_HTML,
                     template: 'template.css',
@@ -90,7 +89,8 @@ module.exports = function (grunt) {
                     {src: [PATH_DIST_FONTS + '/' + 'mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf'},
                     {src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff'},
                     {src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html'},
-                    {src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less'}
+                    {src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less'},
+                    {src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss'}
                 ]
             }
         },
