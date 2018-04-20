@@ -9,6 +9,8 @@ cache:
 branches:
   only:
     - master
+    - /^\d+(?:\.\d+)*$/
+
 install:
   - brew install ttfautohint fontforge --with-python
 before_script:
