@@ -71,7 +71,8 @@ module.exports = function (grunt) {
                         'info_16': 0xF117,
                         'search_16': 0xF118,
                         'download_16': 0xF119,
-                        'copy_16': 0xF11A
+                        'copy_16': 0xF11A,
+                        'minus_16': 0xF11B
                     },
                     startCodepoint: 0xF201
                 }
