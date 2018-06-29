@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                     template: 'template.css',
                     fontFamilyName: 'PT Mosaic Icons',
                     font: 'Mosaic',
-                    version: '2.5.1',
+                    version: '2.5.2',
                     types: 'woff,ttf',
                     codepoints: {
                         'angle-L_16': 0xF101,
