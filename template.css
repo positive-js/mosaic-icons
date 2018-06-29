@@ -44,7 +44,7 @@ body {
 <% } %>
 
 <% if (iconsStyles) { %>/* Icons */<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
-<% if (stylesheet === 'less') { %>
+<% if (stylesheet === 'less' || stylesheet === 'scss'){ %>
 <% var fontSize = glyphs[glyphIdx].split('_')[1]; %>
 .<%= classPrefix %><%= glyphs[glyphIdx] %> {
 	<% if (fontSize) { %>font-size: <%= fontSize %>px;<% } %>
