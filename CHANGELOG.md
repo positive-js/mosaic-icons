@@ -1,3 +1,9 @@
+<a name="2.5.3"></a>
+## 2.5.3 (2018-07-25)
+
+### Updates
+* Added css-style generation
+
 <a name="2.5.2"></a>
 ## 2.5.2 (2018-06-29)
 
