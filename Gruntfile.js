@@ -37,7 +37,7 @@ module.exports = function (grunt) {
                 destScss: PATH_DIST_STYLES,
                 options: {
                     relativeFontPath: PATH_DIST_FONTS,
-                    stylesheets: ['less', 'scss'],
+                    stylesheets: ['less', 'scss', 'css'],
                     htmlDemo: true,
                     destHtml: PATH_DIST_HTML,
                     template: 'template.css',
@@ -91,7 +91,8 @@ module.exports = function (grunt) {
                     {src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff'},
                     {src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html'},
                     {src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less'},
-                    {src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss'}
+                    {src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss'},
+                    {src: [PATH_DIST_STYLES + '/' + 'Mosaic.css'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.css'}
                 ]
             }
         },

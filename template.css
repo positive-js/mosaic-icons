@@ -44,14 +44,24 @@ body {
 <% } %>
 
 <% if (iconsStyles) { %>/* Icons */<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
-<% if (stylesheet === 'less' || stylesheet === 'scss'){ %>
+<% if (stylesheet === 'less' || stylesheet === 'scss' || stylesheet === 'css'){ %>
 <% var fontSize = glyphs[glyphIdx].split('_')[1]; %>
 .<%= classPrefix %><%= glyphs[glyphIdx] %> {
-	<% if (fontSize) { %>font-size: <%= fontSize %>px;<% } %>
-	&:before {
-		content:"<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>";
-	}<% if (ie7) {%>
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x<%= codepoints[glyphIdx] %>;');
+<% if (fontSize) { %>font-size: <%= fontSize %>px;<% } %>
+<% if (stylesheet === 'less' || stylesheet === 'scss'){ %>
+		&:before {
+			content:"<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>";
+		}<% if (ie7) {%>
+		*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x<%= codepoints[glyphIdx] %>;');
+		<% } %>
+	<% } %>
+	<% if (stylesheet === 'css'){ %>
+		}
+		.<%= classPrefix %><%= glyphs[glyphIdx] %>:before {
+			content:"<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>";
+		<% if (ie7) {%>
+		*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x<%= codepoints[glyphIdx] %>;');
+		<% } %>
 	<% } %>
 }
 <% } else { %>
