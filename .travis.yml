@@ -16,8 +16,8 @@ install:
 before_script:
   - nvm install 8
 script:
-  - curl -L -o sketch.zip http://www.sketchapp.com/static/download/sketch.zip
-  - unzip -qo sketch.zip
+  - curl -L -o sketch.zip https://download.sketchapp.com/sketch-51.3-57544.zip
+  - unzip -qo sketch-51.3-57544.zip
   - export PATH=$PWD/Sketch.app/Contents/Resources/sketchtool/bin:$PATH
   - echo $PATH
   - sketchtool -v
