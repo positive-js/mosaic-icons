@@ -37,6 +37,7 @@ module.exports = function (grunt) {
                 destScss: PATH_DIST_STYLES,
                 options: {
                     relativeFontPath: PATH_DIST_FONTS,
+                    fontPathVariables: true,
                     stylesheets: ['less', 'scss', 'css'],
                     htmlDemo: true,
                     destHtml: PATH_DIST_HTML,
