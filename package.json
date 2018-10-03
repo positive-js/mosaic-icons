@@ -23,7 +23,7 @@
         "grunt": "1.0.2",
         "grunt-shell": "^2.1.0",
         "grunt-sketch": "1.0.5",
-        "grunt-webfont": "1.6.0",
+        "grunt-webfont": "1.7.2",
         "grunt-rename-util": "1.0.0",
         "grunt-text-replace": "^0.4.0"
     }

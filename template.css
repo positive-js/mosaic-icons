@@ -9,6 +9,12 @@ body {
   backface-visibility: hidden;
 }
 
+<% if (stylesheet === 'less') { %>
+	@mc-icons-font-path: "../fonts";
+<% } else if (stylesheet === 'scss') { %>
+	$mc-icons-font-path: "../fonts" !default;
+<% } %>
+
 <% if (fontfaceStyles) { %>
 <% if (fontSrc1 && embed.length) { %>
 @font-face {
@@ -19,7 +25,13 @@ body {
 }
 <% } %>@font-face {
 	font-family:"<%= fontFamilyName %>";
-	src: url('../fonts/mc-icons.woff') format("woff");
+	<% if (stylesheet === 'less') { %>
+		src: url('@{mc-icons-font-path}/mc-icons.woff') format("woff");
+	<% } else if (stylesheet === 'scss') { %>
+		src: url($mc-icons-font-path + '/mc-icons.woff') format("woff");
+	<% } else { %>
+		src: url('../fonts/mc-icons.woff') format("woff");
+	<% } %>
 	font-weight:normal;
 	font-style:normal;
 }
