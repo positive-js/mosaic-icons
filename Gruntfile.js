@@ -37,7 +37,6 @@ module.exports = function (grunt) {
                 destScss: PATH_DIST_STYLES,
                 options: {
                     relativeFontPath: PATH_DIST_FONTS,
-                    fontPathVariables: true,
                     stylesheets: ['less', 'scss', 'css'],
                     htmlDemo: true,
                     destHtml: PATH_DIST_HTML,
@@ -46,6 +45,12 @@ module.exports = function (grunt) {
                     font: 'Mosaic',
                     version: '2.5.3',
                     types: 'woff,ttf',
+                    /*
+                    Для тестовой генерации шрифта под Windows нужно раскомментировать эти строки.
+                    Шрифт в этом случае генерируется криво, не используйте это для публикации пакета!!!
+                    */
+                    // engine: 'node',
+                    // autoHint: false,
                     codepoints: {
                         'angle-L_16': 0xF101,
                         'angle-M_16': 0xF102,
