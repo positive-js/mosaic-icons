@@ -1,7 +1,6 @@
 .idea
 Sketch.app
 dist
-build
 *.zip
 
 # Logs
