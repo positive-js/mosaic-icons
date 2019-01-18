@@ -1,9 +1,27 @@
+<a name="2.7.0"></a>
+## 2.7.0 (2019-01-18)
+
+### Renamed icons
+* angle-S_16
+* angle-M_16
+* angle-L_16
+
+### Added icons
+* angle-left-S_16
+* angle-left-M_16
+* angle-left-L_16
+* angle-right-S_16
+* angle-right-M_16
+* angle-right-L_16
+* angle-up-S_16
+* angle-up-M_16
+* angle-up-L_16
+
 <a name="2.6.0"></a>
-## 2.5.3 (2018-07-25)
+## 2.6.0 (2018-07-25)
 
 ### Fixed
 * Font path
-
 
 <a name="2.5.3"></a>
 ## 2.5.3 (2018-07-25)
