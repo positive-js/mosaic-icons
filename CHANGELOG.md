@@ -1,3 +1,9 @@
+<a name="2.7.1"></a>
+## 2.7.1 (2019-01-21)
+
+### Tech
+Updated travis build to new macOS, Sketch and node.js
+
 <a name="2.7.0"></a>
 ## 2.7.0 (2019-01-18)
 
