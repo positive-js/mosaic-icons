@@ -88,6 +88,10 @@ module.exports = function (grunt) {
                         'angle-right-L_16'          : 0xF122,
                         'angle-right-M_16'          : 0xF123,
                         'angle-right-S_16'          : 0xF124,
+                        'bell_32'                   : 0xF125,
+                        'hamburger_32'              : 0xF126,
+                        'close-L_32'                : 0xF127,
+                        'angle-right-M_32'          : 0xF128,
                     },
                     startCodepoint: 0xF701
                 }
