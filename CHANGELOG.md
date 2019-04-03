@@ -1,3 +1,12 @@
+<a name="2.7.2"></a>
+## 2.7.2 (2019-04-03)
+
+### Added icons
+bell_32
+hamburger_32
+close-L_32
+angle-right-M_32
+
 <a name="2.7.1"></a>
 ## 2.7.1 (2019-01-21)
 
