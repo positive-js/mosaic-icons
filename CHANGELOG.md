@@ -1,3 +1,12 @@
+<a name="2.8.0"></a>
+## 2.8.0 (2019-04-04)
+
+### Renamed icons
+* triangle_16 → triangle-down_16
+
+### Added icons
+triangle-up_16
+
 <a name="2.7.2"></a>
 ## 2.7.2 (2019-04-03)
 
