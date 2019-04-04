@@ -70,7 +70,7 @@ module.exports = function (grunt) {
                         'pause_16'                  : 0xF110,
                         'play_16'                   : 0xF111,
                         'stop_16'                   : 0xF112,
-                        'triangle_16'               : 0xF113,
+                        'triangle-down_16'          : 0xF113,
                         'upload-to-cloud_24'        : 0xF114,
                         'upload-to-cloud_64'        : 0xF115,
                         'error_16'                  : 0xF116,
@@ -92,6 +92,7 @@ module.exports = function (grunt) {
                         'hamburger_32'              : 0xF126,
                         'close-L_32'                : 0xF127,
                         'angle-right-M_32'          : 0xF128,
+                        'triangle-up_16'            : 0xF129,
                     },
                     startCodepoint: 0xF701
                 }
