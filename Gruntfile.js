@@ -4,7 +4,7 @@ const PATH_BUILD_ICONS = './build/icons',
     PATH_DIST_STYLES = './dist/styles',
     PATH_DIST_HTML = './dist/html';
 
-const SKETCH_FILE_DEF = 'mc-icons-iconset.sketch';
+const SKETCH_FILE_DEF = 'mosaic-icons-iconset.sketch';
 
 
 module.exports = function (grunt) {
