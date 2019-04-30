@@ -93,6 +93,13 @@ module.exports = function (grunt) {
                         'close-L_32'                : 0xF127,
                         'angle-right-M_32'          : 0xF128,
                         'triangle-up_16'            : 0xF129,
+                        'bell_16'                   : 0xF12A,
+                        'bell-off_16'               : 0xF12B,
+                        'download_32'               : 0xF12C,
+                        'triangle-left_16'          : 0xF12D,
+                        'triangle-right_16'         : 0xF12E,
+                        'upload-to-cloud_16'        : 0xF12F,
+                        'upload-to-cloud_32'        : 0xF130,
                     },
                     startCodepoint: 0xF701
                 }
@@ -100,6 +107,9 @@ module.exports = function (grunt) {
         },
         shell: {
             publish: {command: 'npm publish'},
+            svgfromsubfolder : {
+                command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'  
+              },
             svgrename: {
                 command: 'cd build/icons && for f in *.svg; do mv "$f" "${f#mc-}"; done'
             }
@@ -121,16 +131,20 @@ module.exports = function (grunt) {
                 src: [PATH_BUILD_ICONS + '/*.svg'],
                 overwrite: true,                 // overwrite matched source files
                 replacements: [
-                    {from: / fill="(.*?)"/m, to: ''},
-                    {from: /(\s*)<\/defs[\s\S]*<\/g>/m, to: ''},
-                    {from: /(\s*)<defs>/m, to: ''},
-                    {from: / id="(.*?)"/m, to: ''},
-                    {from: /xmlns:xlink="(.*?)"/m, to: ''},
-                    {from: /(\s*)<g[\s\S]*?>/m, to: ''},
-                    {from: /(\s*)<\/g>/m, to: ''},
-                    {from: /<svg/m, to: '<svg fill="#000"'},
-                    {from: / transform="(.*?)"/m, to: ''},
-                    {from: / fill-rule="(.*?)"/m, to: ''},]
+                    {from : /<!--(.*?)-->\n/m,             to : ''},
+                    {from : / fill="(.*?)"/m,             to : ''},
+                    {from : /(\s*)<\/defs[\s\S]*<\/g>/m,  to : ''},
+                    {from : /(\s*)<defs>/m,               to : ''},
+                    {from : / id="(.*?)"/m,               to : ''},
+                    {from : /xmlns:xlink="(.*?)"/m,       to : ''},
+                    {from : /(\s*)<g[\s\S]*?>/m,          to : ''},
+                    {from : /(\s*)<\/g>/m,                to : ''},
+                    {from : /<svg/m,                      to : '<svg fill="#000"'},
+                    {from : / transform="(.*?)"/m,        to : ''},
+                    {from : / fill-rule="(.*?)"/m,        to : ''},
+                    {from : /<desc>(.*?)<\/desc>\n/m,     to : ''},
+                    {from : /<title>(.*?)<\/title>\n/m,   to : ''},
+                 ]
             }
         }
     });
@@ -140,6 +154,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-rename-util');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main',]);
+    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'shell:publish']);
+    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main',]);
 };
