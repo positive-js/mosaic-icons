@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                     template: 'template.css',
                     fontFamilyName: 'PT Mosaic Icons',
                     font: 'Mosaic',
-                    version: '2.8.1',
+                    version: '2.9.0',
                     types: 'woff,ttf',
                     /*
                     Для тестовой генерации шрифта под Windows нужно раскомментировать эти строки.

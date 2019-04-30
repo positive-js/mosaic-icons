@@ -1,3 +1,18 @@
+<a name="2.9.0"></a>
+## 2.9.0 (2019-04-30)
+
+### Changes
+Добавлены иконки:
+bell_16
+bell-off_16
+download_32
+triangle-left_16
+triangle-right_16
+upload-to-cloud_16
+upload-to-cloud_32
+
+Изменено названия иконок внутри файла скетча, как в pt-icons. Сборка обновлена
+
 <a name="2.8.1"></a>
 ## 2.8.1 (2019-04-05)
 
