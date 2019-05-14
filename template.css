@@ -6,13 +6,62 @@ body {
 .icons__item,
 .icons__item i {
 	-webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  	backface-visibility: hidden;
 }
 
+.<%= baseClass %> {
+    color: #999;
+}
+
+.<%= baseClass %>.<%= classPrefix %>icon-rotate_90 {
+    transform: rotate(90deg);
+}
+
+.<%= baseClass %>.<%= classPrefix %>icon-rotate_180 {
+    transform: rotate(180deg);
+}
+
+.<%= baseClass %>.<%= classPrefix %>icon-rotate_270 {
+    transform: rotate(270deg);
+}
+
+.<%= classPrefix %>spin {
+    -webkit-animation: <%= classPrefix %>spin 2s infinite linear;
+    animation: <%= classPrefix %>spin 2s infinite linear;
+}
+
+.<%= classPrefix %>pulse {
+    -webkit-animation: <%= classPrefix %>spin 1s infinite steps(8);
+    animation: <%= classPrefix %>spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes <%= classPrefix %>spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes <%= classPrefix %>spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
 <% if (stylesheet === 'less') { %>
-	@mc-icons-font-path: "../fonts";
+    @mc-icons-font-path: "../fonts";
 <% } else if (stylesheet === 'scss') { %>
-	$mc-icons-font-path: "../fonts" !default;
+    $mc-icons-font-path: "../fonts" !default;
 <% } %>
 
 <% if (fontfaceStyles) { %>
