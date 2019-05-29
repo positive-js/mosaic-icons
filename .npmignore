@@ -12,8 +12,7 @@ node_modules
 
 build.sh
 Gruntfile.js
-iconset.sketch
-mc-icons-iconset.sketch
+*.sketch
 sketch.zip
 template.css
 template.json

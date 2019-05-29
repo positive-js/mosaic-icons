@@ -3,6 +3,9 @@ Sketch.app
 dist
 *.zip
 
+# Mac files
+.DS_Store
+
 # Logs
 logs
 *.log
