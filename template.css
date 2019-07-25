@@ -9,10 +9,6 @@ body {
   	backface-visibility: hidden;
 }
 
-.<%= baseClass %> {
-    color: #999;
-}
-
 .<%= baseClass %>.<%= classPrefix %>icon-rotate_90 {
     transform: rotate(90deg);
 }
