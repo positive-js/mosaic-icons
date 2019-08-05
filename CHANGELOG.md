@@ -1,3 +1,21 @@
+<a name="3.0.0"></a>
+## 3.0.0 (2019-08-05)
+
+### Breaking Changes
+* Удален глобальный
+``` 
+padding: 0 !important;
+```
+
+* Удален
+```
+.icons__item,
+.icons__item i {
+    -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+}
+```
+
 <a name="2.11.1"></a>
 ## 2.11.1 (2019-07-26)
 
