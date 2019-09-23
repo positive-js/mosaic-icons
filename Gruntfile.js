@@ -1,8 +1,4 @@
-//import {requires} from "grunt";
-
 var FONT_VERSION = '1.9.5';
-
-//var path = requires('path');
 
 var CODEPOINTS = {
     'angle-down-L_16'           : 0xF101,
@@ -62,10 +58,6 @@ const PATH_BUILD_ICONS = './build/icons',
 
 const SKETCH_FILE_DEF = 'mosaic-icons-iconset.sketch';
 
-//const ABSOLUT_PATH = path.resolve();
-
-//console.log(ABSOLUT_PATH);
-
 
 module.exports = function (grunt) {
 
@@ -119,7 +111,7 @@ module.exports = function (grunt) {
         shell: {
             publish: {command: 'npm publish'},
             svgfromsubfolder : {
-                command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'
+                command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'  
               },
             svgrename: {
                 command: 'cd build/icons && for f in *.svg; do mv "$f" "${f#mc-}"; done'
