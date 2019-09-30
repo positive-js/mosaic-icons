@@ -81,6 +81,13 @@ module.exports = function (grunt) {
                 dest: PATH_BUILD_ICONS
             }
         },
+        embedFonts: {
+            all: {
+                files: {
+                    'dist/styles/mc-icons-embed.css': ['dist/styles/mc-icons.css']
+                }
+            }
+        },
         webfont: {
             run: {
                 src: PATH_BUILD_ICONS + '/*.svg',
@@ -154,9 +161,10 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-sketch');
     grunt.loadNpmTasks('grunt-webfont');
+    grunt.loadNpmTasks('grunt-embed-fonts');
     grunt.loadNpmTasks('grunt-rename-util');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main',]);
+    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:publish']);
+    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts']);
 };
