@@ -1,4 +1,7 @@
+[![npm version](https://badge.fury.io/js/%40ptsecurity%2Fmosaic-icons.svg)](https://badge.fury.io/js/%40ptsecurity%2Fmosaic-icons)
 [![Build Status](https://travis-ci.org/positive-js/mosaic-icons.svg?branch=master)](https://travis-ci.org/positive-js/mosaic-icons)
+[![Dependency Status](https://david-dm.org/positive-js/mosaic.svg)](https://david-dm.org/positive-js/mosaic-icons)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/positive-js/mosaic-icons/blob/master/LICENSE)
 
 # Mosaic Icons
 
