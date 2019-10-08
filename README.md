@@ -5,12 +5,12 @@
 
 # Mosaic Icons
 
-###Installation
+### Installation
 Note that Mosaic Icons is optional package and it should be installed manually.
 
-#####NPM
+##### NPM
 `npm install @ptsecurity/mosaic-icons --save`
-#####Yarn
+##### Yarn
 `yarn add @ptsecurity/mosaic-icons`
 
 Then you should add icons styles:
@@ -34,7 +34,7 @@ If mc-icons.css does't suit your project, you can also add:
 - mc-icons.less;
 - mc-icons-embed.css with embedded font included.
 
-###Variants
+### Variants
 
 There are two icon usage variants:
 
