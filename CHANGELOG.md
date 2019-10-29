@@ -1,3 +1,10 @@
+<a name="3.1.0"></a>
+## 3.1.0 (2019-10-10)
+
+### Features
+* css file with embed font version added
+
+
 <a name="3.0.0"></a>
 ## 3.0.0 (2019-08-05)
 
