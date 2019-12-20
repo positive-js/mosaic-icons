@@ -1,4 +1,4 @@
-var FONT_VERSION = '1.9.5';
+var FONT_VERSION = '4.0.0';
 
 var CODEPOINTS = {
     'angle-down-L_16'           : 0xF101,

@@ -1,3 +1,18 @@
+<a name="4.1.0"></a>
+## 4.0.0 (2019-12-20)
+
+### Breaking
+Icons rename:
+bell_16 → bell-o_16
+bell-off_16 → bell-off-o_16
+copy_16 → copy-o_16
+
+### New icons
+Icons added:
+bell_16
+folder-search_16
+folder-search-opened_16
+
 <a name="3.1.0"></a>
 ## 3.1.0 (2019-10-10)
 
