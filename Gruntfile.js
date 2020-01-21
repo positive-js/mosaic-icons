@@ -126,6 +126,9 @@ module.exports = function (grunt) {
               },
             svgrename: {
                 command: 'cd build/icons && for f in *.svg; do mv "$f" "${f#mc-}"; done'
+            },
+            svgcopytobuild: {
+                command: 'mkdir dist/svg; cd build/icons && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
             }
         },
         rename: {
@@ -169,6 +172,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-rename-util');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts']);
+    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:svgcopytobuild', 'shell:publish']);
+    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:svgcopytobuild', ]);
 };
