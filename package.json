@@ -22,6 +22,7 @@
     "devDependencies": {
         "grunt": "^1.0.4",
         "grunt-embed-fonts": "^1.0.2",
+        "grunt-json-generator": "^0.1.0",
         "grunt-rename-util": "^1.0.0",
         "grunt-shell": "^3.0.1",
         "grunt-sketch": "^1.0.5",
