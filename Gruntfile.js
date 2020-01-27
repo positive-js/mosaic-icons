@@ -55,10 +55,11 @@ var CODEPOINTS = {
     'folder-search-opened_16'   : 0xF134,
 };
 
-const PATH_BUILD_ICONS = './build/icons',
-    PATH_DIST_FONTS = './dist/fonts',
-    PATH_DIST_STYLES = './dist/styles',
-    PATH_DIST_HTML = './dist/html';
+const PATH_BUILD_ICONS  = './build/icons',
+      PATH_DIST_FONTS   = './dist/fonts',
+      PATH_DIST_STYLES  = './dist/styles',
+      PATH_DIST_SVG     = './dist/svg',
+      PATH_DIST_HTML    = './dist/html';
 
 const SKETCH_FILE_DEF = 'mosaic-icons-iconset.sketch';
 
@@ -125,10 +126,10 @@ module.exports = function (grunt) {
                 command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'  
               },
             svgrename: {
-                command: 'cd build/icons && for f in *.svg; do mv "$f" "${f#mc-}"; done'
+                command: 'cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do mv "$f" "${f#mc-}"; done'
             },
             svgcopytobuild: {
-                command: 'mkdir dist/svg; cd build/icons && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
+                command: 'mkdir -p ' + PATH_DIST_SVG + '; cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
             }
         },
         rename: {
@@ -172,6 +173,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-rename-util');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:svgcopytobuild', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'shell:svgrename', 'replace:remove_mask', 'webfont:run', 'rename:main', 'embedFonts', 'shell:svgcopytobuild', ]);
+    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'shell:publish']);
+    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', ]);
 };
