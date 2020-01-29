@@ -214,7 +214,7 @@ var ICONS = {
 var CODEPOINTS = {};
 
 Object.entries(ICONS).forEach(([key, value]) => {
-    CODEPOINTS[key] = value;
+    CODEPOINTS[key] = value.code;
 });
 
 const PATH_BUILD_ICONS  = './build/icons',
