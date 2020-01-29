@@ -12,7 +12,7 @@ branches:
     - /^\d+(?:\.\d+)*$/
 
 install:
-  - brew install ttfautohint fontforge --with-python
+  - brew install ttfautohint fontforge
 before_script:
   - nvm install 10
 script:
