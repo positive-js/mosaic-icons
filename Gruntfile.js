@@ -3,211 +3,211 @@ var FONT_VERSION = '4.0.0';
 var ICONS = {
     "angle-down-L_16": {
         code: 0xF101,
-        tags: ["angel down", "arrow", "down", "interface", "стрелка вниз", "стрелка", "вниз", "интерфейс"]
+        tags: ["expand", "стрелка вниз", "уголок", "развернуть"]
     },
     "angle-down-M_16": {
         code: 0xF102,
-        tags: ["angel down", "arrow", "down", "interface", "стрелка вниз", "стрелка", "вниз", "интерфейс"]
+        tags: ["expand", "стрелка вниз", "уголок", "развернуть"]
     },
     "angle-down-S_16": {
         code: 0xF103,
-        tags: ["angel down", "arrow", "down", "interface", "стрелка вниз", "стрелка", "вниз", "интерфейс"]
+        tags: ["expand", "стрелка вниз", "уголок", "развернуть"]
     },
     "calendar_16": {
         code: 0xF104,
-        tags: ["business", "calendar", "date", "event", "plan", "schedule", "бизнесс", "календарь", "дата", "событие", "план", "рассписание"]
+        tags: ["date", "datepicker", "schedule", "календарь", "дейтпикер", "расписание", "дата"]
     },
     "check_16": {
         code: 0xF105,
-        tags: ["check", "check box", "check mark", "done", "good", "interface", "ok", "selection", "success", "готово", "ок", "интерфейс", "успех", "выбор"]
+        tags: ["check", "done", "success", "готово", "галочка", "успех", "ок", "ок"]
     },
     "circle-8_16": {
         code: 0xF106,
-        tags: ["circle", "round", "sphere", "basic", "orb", "ring", "круг", "кольцо", "сфера", "овал"]
+        tags: ["circle", "round", "круг"]
     },
     "clock_16": {
         code: 0xF107,
-        tags: ["business", "clock", "duration", "hour", "time", "watch", "бизнесс", "часы", "интервал", "час", "время"]
+        tags: ["duration", "hour", "time", "watch", "часы", "время", "таймпикер"]
     },
     "close-L_16": {
         code: 0xF108,
-        tags: ["cancel", "close", "cross", "delete", "interface", "x mark", "отменить", "закрыть", "крест", "удалить", "интерфейс"]
+        tags: ["cancel", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить"]
     },
     "close-M_16": {
         code: 0xF109,
-        tags: ["cancel", "close", "cross", "delete", "interface", "x mark", "отменить", "закрыть", "крест", "удалить", "интерфейс"]
+        tags: ["cancel", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить"]
     },
     "close-S_16": {
         code: 0xF10A,
-        tags: ["cancel", "close", "cross", "delete", "interface", "x mark", "отменить", "закрыть", "крест", "удалить", "интерфейс"]
+        tags: ["cancel", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить"]
     },
     "ellipsis_16": {
         code: 0xF10B,
-        tags: ["interface", "menu", "navigation", "sidebar", "интерфейс", "меню", "сайдбар", "навигация"]
+        tags: ["menu", "меню", "многоточие"]
     },
     "folder-closed_16": {
         code: 0xF10C,
-        tags: ["business", "case", "directory", "folder", "organize", "portfolio", "бизнесс", "папка", "портфолио", "директория"]
+        tags: ["directory", "папка", "директория"]
     },
     "folder-opened_16": {
         code: 0xF10D,
-        tags: ["business", "case", "directory", "folder", "organize", "portfolio", "бизнесс", "папка", "портфолио", "директория"]
+        tags: ["directory", "папка", "директория"]
     },
     "gear_16": {
         code: 0xF10E,
-        tags: ["advanced", "configuration", "gear", "interface", "option", "preferences", "settings", "tool", "интерфейс", "дополнительно", "шестеренка", "настройки", "инструмент"]
+        tags: ["configuration", "interface", "options", "preferences", "settings", "tool", "шестеренка", "шестерёнка", "настройка", "параметры"]
     },
     "hamburger_16": {
         code: 0xF10F,
-        tags: ["hamburger", "interface", "list", "menu", "navigation", "sidebar", "интерфейс", "гамбургер", "список", "меню", "навигация", "сайдбар"]
+        tags: ["hamburger", "menu", "гамбургер", "меню"]
     },
     "pause_16": {
         code: 0xF110,
-        tags: ["audio", "control", "interface", "media control", "multimedia", "music", "pause", "sound", "интерфейс", "аудио", "контрол", "медиа", "музыка", "пауза", "звук"]
+        tags: ["пауза"]
     },
     "play_16": {
         code: 0xF111,
-        tags: ["audio", "control", "interface", "media control", "multimedia", "music", "play", "sound", "интерфейс", "аудио", "контрол", "медиа", "музыка", "пуск", "звук"]
+        tags: ["start", "пуск", "запустить", "запуск"]
     },
     "stop_16": {
         code: 0xF112,
-        tags: ["audio", "control", "interface", "media control", "multimedia", "music", "stop", "sound", "интерфейс", "аудио", "контрол", "медиа", "музыка", "стоп", "звук"]
+        tags: ["стоп", "остановить", "остановка"]
     },
     "triangle-down_16": {
         code: 0xF113,
-        tags: ["arrow", "care down", "down", "interface", "интерфейс", "стрелка", "вниз"]
+        tags: ["caret down", "expand", "стрелка вниз", "уголок", "развернуть"]
     },
     "upload-to-cloud_24": {
         code: 0xF114,
-        tags: ["beam", "output", "transfer", "up", "upload", "web", "вывод", "вверх", "веб", "загрузка", "облако"]
+        tags: ["загрузка", "загрузить", "облако"]
     },
     "upload-to-cloud_64": {
         code: 0xF115,
-        tags: ["beam", "output", "transfer", "up", "upload", "web", "вывод", "вверх", "веб", "загрузка", "облако"]
+        tags: ["загрузка", "загрузить", "облако"]
     },
     "error_16": {
         code: 0xF116,
-        tags: ["alert", "error", "failure", "fault", "notice", "signs", "ошибка", "знак", "проблема"]
+        tags: ["failure", "ошибка", "проблема"]
     },
     "info_16": {
         code: 0xF117,
-        tags: ["info", "information", "instruction", "note", "notice", "notification", "signs", "tip", "информация", "инфо", "инструкция", "заметка", "уведомление", "знак", "подсказка"]
+        tags: ["note", "notice", "tip", "информация", "инфо", "подсказка"]
     },
     "search_16": {
         code: 0xF118,
-        tags: ["find", "interface", "loupe", "magnifier", "search", "интерфейс", "поиск", "искать"]
+        tags: ["find", "magnifier", "лупа", "поиск", "искать"]
     },
     "download_16": {
         code: 0xF119,
-        tags: ["download", "keep", "load", "save", "transfer", "web", "скачать", "загрузить", "сохранить", "веб"]
+        tags: ["скачать", "загрузить", "сохранить"]
     },
     "copy-o_16": {
         code: 0xF11A,
-        tags: ["clone", "copy", "double", "duplicate", "interface", "reproduction", "копировать", "дубль", "интерфейс", "клон"]
+        tags: ["clone", "duplicate", "дубль", "дублировать", "копировать", "копия"]
     },
     "minus_16": {
         code: 0xF11B,
-        tags: ["cross", "decrease", "less", "minus", "negative", "remove", "крест", "минус", "меньше", "умеьшить"]
+        tags: ["decrease", "минус", "меньше", "уменьшить"]
     },
     "angle-up-L_16": {
         code: 0xF11C,
-        tags: ["angel up", "arrow", "chevron", "interface", "up", "стрелка вверх", "стрелка", "вверх", "интерфейс"]
+        tags: ["стрелка вверх", "expand", "уголок", "развернуть"]
     },
     "angle-up-M_16": {
         code: 0xF11D,
-        tags: ["angel up", "arrow", "chevron", "interface", "up", "стрелка вверх", "стрелка", "вверх", "интерфейс"]
+        tags: ["стрелка вверх", "expand", "уголок", "развернуть"]
     },
     "angle-up-S_16": {
         code: 0xF11E,
-        tags: ["angel up", "arrow", "chevron", "interface", "up", "стрелка вверх", "стрелка", "вверх", "интерфейс"]
+        tags: ["стрелка вверх", "expand", "уголок", "развернуть"]
     },
     "angle-left-L_16": {
         code: 0xF11F,
-        tags: ["angel left", "arrow", "back", "backward", "chevron", "interface", "стрелка влево", "стрелка", "назад", "влево", "интерфейс"]
+        tags: ["стрелка влево", "expand", "уголок", "развернуть"]
     },
     "angle-left-M_16": {
         code: 0xF120,
-        tags: ["angel left", "arrow", "back", "backward", "chevron", "interface", "стрелка влево", "стрелка", "назад", "влево", "интерфейс"]
+        tags: ["стрелка влево", "expand", "уголок", "развернуть"]
     },
     "angle-left-S_16": {
         code: 0xF121,
-        tags: ["angel left", "arrow", "back", "backward", "chevron", "interface", "стрелка влево", "стрелка", "назад", "влево", "интерфейс"]
+        tags: ["стрелка влево", "expand", "уголок", "развернуть"]
     },
     "angle-right-L_16": {
         code: 0xF122,
-        tags: ["angel right", "arrow", "chevron", "continue", "forward", "interface", "next", "стрелка вправо", "стрелка", "вправо", "продолжить", "вперед", "интерфейс", "следующий"]
+        tags: ["стрелка вправо", "expand", "уголок", "развернуть"]
     },
     "angle-right-M_16": {
         code: 0xF123,
-        tags: ["angel right", "arrow", "chevron", "continue", "forward", "interface", "next", "стрелка вправо", "стрелка", "вправо", "продолжить", "вперед", "интерфейс", "следующий"]
+        tags: ["стрелка вправо", "expand", "уголок", "развернуть"]
     },
     "angle-right-S_16": {
         code: 0xF124,
-        tags: ["angel right", "arrow", "chevron", "continue", "forward", "interface", "next", "стрелка вправо", "стрелка", "вправо", "продолжить", "вперед", "интерфейс", "следующий"]
+        tags: ["стрелка вправо", "expand", "уголок", "развернуть"]
     },
     "bell_32": {
         code: 0xF125,
-        tags: ["alarm", "bell", "business", "buzz", "chime", "dong", "gong", "колокольчик", "будильник", "звонок", "уведомление"]
+        tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
     },
     "hamburger_32": {
         code: 0xF126,
-        tags: ["hamburger", "interface", "list", "menu", "navigation", "sidebar", "интерфейс", "гамбургер", "список", "меню", "навигация", "сайдбар"]
+        tags: ["hamburger", "menu", "гамбургер", "меню"]
     },
     "close-L_32": {
         code: 0xF127,
-        tags: ["cancel", "close", "cross", "delete", "interface", "x mark", "отменить", "закрыть", "крест", "удалить", "интерфейс"]
+        tags: ["cancel", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить"]
     },
     "angle-right-M_32": {
         code: 0xF128,
-        tags: ["angel right", "arrow", "chevron", "continue", "forward", "interface", "next", "стрелка вправо", "стрелка", "вправо", "продолжить", "вперед", "интерфейс", "следующий"]
+        tags: ["стрелка вправо", "expand", "уголок", "развернуть"]
     },
     "triangle-up_16": {
         code: 0xF129,
-        tags: ["arrow", "basic", "cone", "geometry", "triangle", "up", "стрелка", "конус", "треугольник", "геометрия", "вверх"]
+        tags: ["caret up", "expand", "стрелка вверх", "уголок", "развернуть"]
     },
     "bell-o_16": {
         code: 0xF12A,
-        tags: ["alarm", "bell", "business", "buzz", "chime", "dong", "gong", "колокольчик", "будильник", "звонок", "уведомление"]
+        tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
     },
     "bell-off-o_16": {
         code: 0xF12B,
-        tags: ["alarm", "bell", "business", "buzz", "chime", "dong", "gong", "колокольчик", "будильник", "звонок", "уведомление"]
+        tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
     },
     "download_32": {
         code: 0xF12C,
-        tags: ["download", "keep", "load", "save", "transfer", "web", "", "", "", ""]
+        tags: ["скачать", "загрузить", "сохранить"]
     },
     "triangle-left_16": {
         code: 0xF12D,
-        tags: ["arrow", "back", "backward", "care left", "interface", "стрелка", "влево", "назад", "интерфейс"]
+        tags: ["caret left", "expand", "стрелка влево", "уголок", "развернуть"]
     },
     "triangle-right_16": {
         code: 0xF12E,
-        tags: ["arrow", "continue", "direction", "forward", "interface", "more", "next", "стрелка", "вправо", "продолжить", "направление", "вперед", "интерфейс", "больше", "следующий"]
+        tags: ["caret left", "expand", "стрелка влево", "уголок", "развернуть"]
     },
     "upload-to-cloud_16": {
         code: 0xF12F,
-        tags: ["beam", "output", "transfer", "up", "upload", "web", "вывод", "вверх", "веб", "загрузка", "облако"]
+        tags: ["загрузка", "загрузить", "облако"]
     },
     "upload-to-cloud_32": {
         code: 0xF130,
-        tags: ["beam", "output", "transfer", "up", "upload", "web", "вывод", "вверх", "веб", "загрузка", "облако"]
+        tags: ["загрузка", "загрузить", "облако"]
     },
     "bell_16": {
         code: 0xF131,
-        tags: ["alarm", "bell", "business", "buzz", "chime", "dong", "gong", "колокольчик", "будильник", "звонок", "уведомление"]
+        tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
     },
     "copy_16": {
         code: 0xF132,
-        tags: ["clone", "copy", "double", "duplicate", "interface", "reproduction", "копировать", "дубль", "интерфейс", "клон"]
+        tags: ["clone", "duplicate", "дубль", "дублировать", "копировать", "копия"]
     },
     "folder-search_16": {
         code: 0xF133,
-        tags: ["business", "case", "directory", "find", "folder", "organize", "search", "папка", "поиск", "искать", "директория"]
+        tags: ["directory", "папка", "директория", "динамическая группа"]
     },
     "folder-search-opened_16": {
         code: 0xF134,
-        tags: ["business", "case", "directory", "find", "folder", "organize", "search", "папка", "поиск", "искать", "директория"]
+        tags: ["directory", "папка", "директория", "динамическая группа"]
     }
 };
 
@@ -217,12 +217,12 @@ Object.entries(ICONS).forEach(([key, value]) => {
     CODEPOINTS[key] = value.code;
 });
 
-const PATH_BUILD_ICONS  = './build/icons',
-      PATH_DIST_INFO    = './dist/info/mc-icons-info.json',
-      PATH_DIST_FONTS   = './dist/fonts',
-      PATH_DIST_STYLES  = './dist/styles',
-      PATH_DIST_SVG     = './dist/svg',
-      PATH_DIST_HTML    = './dist/html';
+const PATH_BUILD_ICONS = './build/icons',
+      PATH_DIST_INFO   = './dist/info/mc-icons-info.json',
+      PATH_DIST_FONTS  = './dist/fonts',
+      PATH_DIST_STYLES = './dist/styles',
+      PATH_DIST_SVG    = './dist/svg',
+      PATH_DIST_HTML   = './dist/html';
 
 const SKETCH_FILE_DEF = 'mosaic-icons-iconset.sketch';
 
@@ -290,7 +290,7 @@ module.exports = function (grunt) {
             }
         },
         shell: {
-            publish: {command: 'npm publish'},
+            publish: { command: 'npm publish' },
             svgfromsubfolder: {
                 command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'
             },
@@ -304,12 +304,12 @@ module.exports = function (grunt) {
         rename: {
             main: {
                 files: [
-                    {src: [PATH_DIST_FONTS + '/' + 'mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf'},
-                    {src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff'},
-                    {src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html'},
-                    {src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less'},
-                    {src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss'},
-                    {src: [PATH_DIST_STYLES + '/' + 'Mosaic.css'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.css'}
+                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf' },
+                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff' },
+                    { src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html' },
+                    { src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less' },
+                    { src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss' },
+                    { src: [PATH_DIST_STYLES + '/' + 'Mosaic.css'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.css' }
                 ]
             }
         },
@@ -318,19 +318,19 @@ module.exports = function (grunt) {
                 src: [PATH_BUILD_ICONS + '/*.svg'],
                 overwrite: true,                 // overwrite matched source files
                 replacements: [
-                    {from : /<!--(.*?)-->\n/m,             to : ''},
-                    {from : / fill="(.*?)"/m,             to : ''},
-                    {from : /(\s*)<\/defs[\s\S]*<\/g>/m,  to : ''},
-                    {from : /(\s*)<defs>/m,               to : ''},
-                    {from : / id="(.*?)"/m,               to : ''},
-                    {from : /xmlns:xlink="(.*?)"/m,       to : ''},
-                    {from : /(\s*)<g[\s\S]*?>/m,          to : ''},
-                    {from : /(\s*)<\/g>/m,                to : ''},
-                    {from : /<svg/m,                      to : '<svg fill="#000"'},
-                    {from : / transform="(.*?)"/m,        to : ''},
-                    {from : / fill-rule="(.*?)"/m,        to : ''},
-                    {from : /<desc>(.*?)<\/desc>\n/m,     to : ''},
-                    {from : /<title>(.*?)<\/title>\n/m,   to : ''},
+                    { from: /<!--(.*?)-->\n/m, to: '' },
+                    { from: / fill="(.*?)"/m, to: '' },
+                    { from: /(\s*)<\/defs[\s\S]*<\/g>/m, to: '' },
+                    { from: /(\s*)<defs>/m, to: '' },
+                    { from: / id="(.*?)"/m, to: '' },
+                    { from: /xmlns:xlink="(.*?)"/m, to: '' },
+                    { from: /(\s*)<g[\s\S]*?>/m, to: '' },
+                    { from: /(\s*)<\/g>/m, to: '' },
+                    { from: /<svg/m, to: '<svg fill="#000"' },
+                    { from: / transform="(.*?)"/m, to: '' },
+                    { from: / fill-rule="(.*?)"/m, to: '' },
+                    { from: /<desc>(.*?)<\/desc>\n/m, to: '' },
+                    { from: /<title>(.*?)<\/title>\n/m, to: '' },
                 ]
             }
         }
