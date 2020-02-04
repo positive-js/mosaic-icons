@@ -208,6 +208,10 @@ var ICONS = {
     "folder-search-opened_16": {
         code: 0xF134,
         tags: ["directory", "папка", "директория", "динамическая группа"]
+    },
+    "info-o_16": {
+        code: 0xF135,
+        tags: ["note", "notice", "tip", "информация", "инфо", "подсказка"]
     }
 };
 
