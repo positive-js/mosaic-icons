@@ -27,6 +27,7 @@ script:
 
 deploy:
   - provider: npm
+    edge: true
     skip_cleanup: true
     email: positivejs@ptsecurity.com
     api_key: $NPM_TOKEN
