@@ -1,3 +1,9 @@
+<a name="5.0.0"></a>
+## 5.0.0 (2020-05-15)
+
+### Breaking changes
+Rename icon: circle-close_16 → close-circle_16 
+
 <a name="4.2.0"></a>
 ## 4.2.0 (2020-05-15)
 
