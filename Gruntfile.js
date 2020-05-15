@@ -212,6 +212,10 @@ var ICONS = {
     "info-o_16": {
         code: 0xF135,
         tags: ["note", "notice", "tip", "информация", "инфо", "подсказка"]
+    },
+    "circle-close_16": {
+        code: 0xF136,
+        tags: ["reset", "discard", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить", "сбросить"]
     }
 };
 
