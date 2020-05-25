@@ -216,7 +216,11 @@ var ICONS = {
     "close-circle_16": {
         code: 0xF136,
         tags: ["reset", "discard", "close", "cross", "times", "x mark", "отменить", "отмена", "закрыть", "крестик", "удалить", "сбросить"]
-    }
+    },
+    "bento_16": {
+        code: 0xF137,
+        tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
+    },
 };
 
 var CODEPOINTS = {};
