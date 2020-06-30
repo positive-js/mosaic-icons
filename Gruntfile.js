@@ -221,6 +221,10 @@ var ICONS = {
         code: 0xF137,
         tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
     },
+    "bento_32": {
+        code: 0xF138,
+        tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
+    },
 };
 
 var CODEPOINTS = {};
