@@ -1,4 +1,10 @@
 <a name="5.2.0"></a>
+## 5.2.1 (2020-08-14)
+
+### Changed icons
+bento_16 for better rendering on non-retina screens
+
+<a name="5.2.0"></a>
 ## 5.2.0 (2020-06-30)
 
 ### New icons
