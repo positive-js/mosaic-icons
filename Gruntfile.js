@@ -307,6 +307,9 @@ module.exports = function (grunt) {
         },
         shell: {
             publish: { command: 'npm publish' },
+            cleanup: {
+                command: 'rm -rf ./{dist,build}'
+            },
             svgfromsubfolder: {
                 command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'
             },
@@ -359,6 +362,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-json-generator');
 
-    grunt.registerTask('publish', ['sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator', 'shell:publish']);
-    grunt.registerTask('default', ['sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator']);
+    grunt.registerTask('publish', ['shell:cleanup', 'sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator', 'shell:publish']);
+    grunt.registerTask('default', ['shell:cleanup', 'sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator']);
 };
