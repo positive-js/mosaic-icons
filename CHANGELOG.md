@@ -1,4 +1,12 @@
 <a name="5.2.0"></a>
+## 5.3.0 (2021-03-17)
+
+###
+Added icons
+external-link_16
+new-tab_16
+
+<a name="5.2.0"></a>
 ## 5.2.1 (2020-08-14)
 
 ### Changed icons
