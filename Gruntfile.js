@@ -225,6 +225,14 @@ var ICONS = {
         code: 0xF138,
         tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
     },
+    "new-tab_16": {
+        code: 0xF139,
+        tags: ["new tab", "новая вкладка"]
+    },
+    "external-link_16": {
+        code: 0xF13A,
+        tags: ["external link", "new tab", "новая вкладка", "внешняя ссылка"]
+    },
 };
 
 var CODEPOINTS = {};
