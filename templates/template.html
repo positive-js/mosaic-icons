@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><%= fontFamilyName %></title>
+		<link rel="stylesheet" type="text/css" href="styles/mc-icons.css">
+		<style>
+			section{border-top:1px solid #eee;padding:2em 3em 0 3em}
+			section ul{margin:0;padding:0}
+			section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}
+			.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAySURBVHgB3Y2xDQAwDMJIH+D/L+GCtAewVMoUjyDLJakRIJlmHHyyQah+pMM2RgobhAu0ngrivDB70wAAAABJRU5ErkJggg==") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}
+			.icon{display:inline;display:inline-block}
+			h1{margin-top:0}
+			h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}
+			body {
+				margin:0;
+				padding:10px 20px;
+				background:#fff;
+				color:#222;
+				}
+			h1, div, footer {
+				font-family:"Helvetica Neue", Arial, sans-serif;
+				}
+			h1 {
+				margin:0 0 20px;
+				font-size:32px;
+				font-weight:normal;
+				}
+			h1 small {
+				font-size: 0.8em;
+				padding-left: 2em;
+			}
+			.icons {
+				margin-bottom:40px;
+				-webkit-column-count:5;
+				   -moz-column-count:5;
+						column-count:5;
+				-webkit-column-gap:20px;
+				   -moz-column-gap:20px;
+						column-gap:20px;
+				}
+			.icons__item,
+			.icons__item i {
+				line-height:2em;
+				cursor:pointer;
+				overflow:hidden;
+				}
+			.icons__item:hover {
+				color:#3c90be;
+				}
+			.icons__item i {
+				display:inline-block;
+				width:32px;
+				text-align:center;
+				}
+			.icons__item:hover i {
+				-webkit-transform:scale(1.5);
+						transform:scale(1.5);
+				}
+			footer {
+				margin-top:40px;
+				font-size:14px;
+				color:#999;
+				display:block;
+				padding:0 3em 3em 3em
+			}
+			footer p{margin:0;font-size:.7em}
+			footer a{color:#0f7595;margin-left:0}
+
+			svg {
+				fill: #8F99AA;
+				color: #E80E0E;
+			}
+
+		</style>
+		<style type="text/css">
+			{{#shapes}}	{{#selector.dimensions}}{{expression}}{{^last}}, {{/last}}{{/selector.dimensions}} { width: {{width.outer}}px; height: {{height.outer}}px; }
+			{{/shapes}}</style>
+	</head>
+	<body>
+		<svg width="0" height="0" style="position:absolute">
+			{{#shapes}}		{{{svg}}}
+			{{/shapes}}
+		</svg>
+		<h1><%= fontFamilyName %><% if (version) { %><small>version <%= version %></small><% } %></h1>
+		<section>
+			<h1>Font</h1>
+			<div class="icons" id="icons">
+				<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
+					<div class="icons__item" data-name="<%= glyph %>"><i class="<%= baseClass %> <%= classPrefix %><%= glyph %>"></i> <%= classPrefix %><%= glyph %></div>
+				<% } %>
+			</div>
+
+			<% if (addLigatures) { %>
+			<div class="ligature-icons" style="display:none">
+				<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx]; %>
+					<%= glyph %>
+				<% } %>
+			</div>
+			<% } %>
+
+			<h3>Usage</h3>
+			<pre><code>&lt;i class=&quot;<%= baseClass ? baseClass + ' ' : '' %><%= classPrefix %><span id="name">name</span>&quot;&gt;&lt;/i&gt;</code></pre>
+			<% if (addLigatures) { %>
+			<pre><code>&lt;i class=&quot;ligature-icons&quot;&gt;<span id="name2">name</span>&lt;/i&gt;</code></pre>
+			<% } %>
+		</section>
+		<section>
+			<h1>Inline SVG with embedded sprite usage</h1>
+			<ul>
+				{{#shapes}}
+				<li title="{{name}}">
+					<div class="icon-box">
+
+						<!-- {{name}} -->
+						<svg class="{{#selector.dimensions}}{{#last}}{{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}">
+							<use xlink:href="#{{name}}"></use>
+						</svg>
+
+					</div>
+					<h2>{{name}}</h2>
+				</li>
+				{{/shapes}}
+			</ul>
+		</section>
+
+		<footer>
+			<p>Generated at {{date}}</p>
+			<p>Font by <a href="https://github.com/sapegin/grunt-webfont">grunt-webfont</a>.</p>
+			<p>Sprite by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+
+		<script>
+		(function() {
+			document.getElementById('icons').onclick = function(e) {
+				e = e || window.event;
+				var name = e.target.getAttribute('data-name') || e.target.parentNode.getAttribute('data-name');
+				document.getElementById('name').innerHTML = name;
+				<% if (addLigatures) { %>document.getElementById('name2').innerHTML = name;<% } %>
+			}
+		})();
+		</script>
+	</body>
+</html>

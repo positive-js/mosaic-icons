@@ -233,6 +233,10 @@ var ICONS = {
         code: 0xF13A,
         tags: ["external link", "new tab", "новая вкладка", "внешняя ссылка"]
     },
+    "bento_24" : {
+        code: 0xF13B,
+        tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
+    }
 };
 
 var CODEPOINTS = {};
@@ -248,31 +252,14 @@ const PATH_BUILD_ICONS = './build/icons',
       PATH_DIST_SVG    = './dist/svg',
       PATH_DIST_HTML   = './dist/html';
 
-const SKETCH_FILE_DEF = 'mosaic-icons-iconset.sketch';
-
-
 module.exports = function (grunt) {
-
-    let sketch_file = grunt.option('file');
-
-    if (sketch_file === undefined || sketch_file === true) {
-        sketch_file = SKETCH_FILE_DEF;
-    }
+    'use strict';
 
     grunt.loadNpmTasks('grunt-shell');
-
+    grunt.loadNpmTasks('grunt-svg-sprite');
+    grunt.loadNpmTasks('grunt-webfont');
+    grunt.loadNpmTasks('grunt-text-replace');
     grunt.initConfig({
-        sketch_export: {
-            run: {
-                options: {
-                    type: 'slices',
-                    scales: [1.0],
-                    formats: ['svg']
-                },
-                src: sketch_file,
-                dest: PATH_BUILD_ICONS
-            }
-        },
         json_generator: {
             your_target: {
                 dest: PATH_DIST_INFO,
@@ -296,33 +283,35 @@ module.exports = function (grunt) {
                     relativeFontPath: PATH_DIST_FONTS,
                     stylesheets: ['less', 'scss', 'css'],
                     htmlDemo: true,
-                    destHtml: PATH_DIST_HTML,
-                    template: 'template.css',
+                    template: 'templates/template.css',
+                    htmlDemoTemplate: 'templates/template.html',
+                    htmlDemoFilename: 'template',
+                    destHtml: 'dist',
                     fontFamilyName: 'PT Mosaic Icons',
                     font: 'Mosaic',
                     version: FONT_VERSION,
                     types: 'woff,ttf',
-                    /*
-                    Для тестовой генерации шрифта под Windows нужно раскомментировать эти строки.
-                    Шрифт в этом случае генерируется криво, не используйте это для публикации пакета!!!
-                    */
-                    // engine: 'node',
-                    // autoHint: false,
                     codepoints: CODEPOINTS,
-                    startCodepoint: 0xF701
+                    startCodepoint: 0xF701,
                 }
             }
         },
         shell: {
             publish: { command: 'npm publish' },
-            cleanup: {
-                command: 'rm -rf ./{dist,build}'
-            },
             svgfromsubfolder: {
                 command: 'find ' + PATH_BUILD_ICONS + ' -mindepth 2 -type f -print -exec mv {} ' + PATH_BUILD_ICONS + '/ \\;'
             },
             svgrename: {
                 command: 'cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do mv "$f" "${f#mc-}"; done'
+            },
+            figmaexport: {
+                command: 'npm run export-icons'
+            },
+            cleanup: {
+                command: 'rm -rf ./{dist,build}'
+            },
+            remove_template: {
+                command: 'rm dist/template.html'
             },
             svgcopytobuild: {
                 command: 'mkdir -p ' + PATH_DIST_SVG + '; cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
@@ -345,31 +334,89 @@ module.exports = function (grunt) {
                 src: [PATH_BUILD_ICONS + '/*.svg'],
                 overwrite: true,                 // overwrite matched source files
                 replacements: [
-                    { from: /<!--(.*?)-->\n/m, to: '' },
-                    { from: / fill="(.*?)"/m, to: '' },
-                    { from: /(\s*)<\/defs[\s\S]*<\/g>/m, to: '' },
-                    { from: /(\s*)<defs>/m, to: '' },
-                    { from: / id="(.*?)"/m, to: '' },
-                    { from: /xmlns:xlink="(.*?)"/m, to: '' },
-                    { from: /(\s*)<g[\s\S]*?>/m, to: '' },
-                    { from: /(\s*)<\/g>/m, to: '' },
-                    { from: /<svg/m, to: '<svg fill="#000"' },
-                    { from: / transform="(.*?)"/m, to: '' },
-                    { from: / fill-rule="(.*?)"/m, to: '' },
-                    { from: /<desc>(.*?)<\/desc>\n/m, to: '' },
-                    { from: /<title>(.*?)<\/title>\n/m, to: '' },
+                // { from: /<!--(.*?)-->\n/m, to: '' },
+                // { from: /fill="#ABCDEF"/m, to: 'class="primary-color"' },
+                { from: /fill="#EE30FF"/m, to: 'fill="currentColor"' },
+                { from: / fill="(#(.*?)|none)"/gm, to: '' },
+                { from: / stroke="(.*?)"/gm, to: '' },
+                // { from: /(\s*)<\/defs[\s\S]*<\/g>/m, to: '' },
+                // { from: /(\s*)<defs>/m, to: '' },
+                // { from: / id="(.*?)"/m, to: '' },
+                // { from: /xmlns:xlink="(.*?)"/m, to: '' },
+                // { from: /(\s*)<g[\s\S]*?>/m, to: '' },
+                // { from: /(\s*)<\/g>/m, to: '' },
+                // { from: /<svg/m, to: '<svg fill="#000"' },
+                { from: / transform="(.*?)"/m, to: '' },
+                // { from: /<desc>(.*?)<\/desc>\n/m, to: '' },
+                // { from: /<title>(.*?)<\/title>\n/m, to: '' },
                 ]
-            }
-        }
+                }
+        },
+        svg_sprite: {
+            basic: {
+                expand: true,
+                cwd: 'build/icons',
+                src: ['*.svg'],
+                dest: 'dist',
+                options: {
+                "svg": {
+                    "xmlDeclaration": false,
+                    "doctypeDeclaration": false,
+                    "namespaceIDs": false,
+                    "dimensionAttributes": false
+                },
+                "mode": {
+                    "symbol": {
+                    "prefix": ".pt-%s",
+                    "inline": true,
+                    "example": {
+                        "template": "dist/template.html",
+                        "dest": "../index.html"
+                    },
+                    render: {
+                        scss: true
+                    },
+                    }
+                }
+                }
+            },
+        },
     });
 
-    grunt.loadNpmTasks('grunt-sketch');
     grunt.loadNpmTasks('grunt-webfont');
     grunt.loadNpmTasks('grunt-embed-fonts');
     grunt.loadNpmTasks('grunt-rename-util');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-json-generator');
 
-    grunt.registerTask('publish', ['shell:cleanup', 'sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator', 'shell:publish']);
-    grunt.registerTask('default', ['shell:cleanup', 'sketch_export:run', 'shell:svgfromsubfolder', 'replace:remove_mask', 'shell:svgcopytobuild', 'shell:svgrename', 'webfont:run', 'rename:main', 'embedFonts', 'json_generator']);
+    grunt.registerTask('publish',
+        ['shell:cleanup', 
+        'shell:figmaexport',
+        'shell:svgfromsubfolder', 
+        'replace:remove_mask', 
+        'shell:svgcopytobuild', 
+        'shell:svgrename', 
+        'webfont:run', 
+        'svg_sprite:basic',
+        'rename:main',
+        'shell:remove_template',
+        'embedFonts', 
+        'json_generator', 
+        'shell:publish']
+    );
+
+    grunt.registerTask('default',
+        ['shell:cleanup', 
+        'shell:figmaexport', 
+        'shell:svgfromsubfolder', 
+        'replace:remove_mask', 
+        'shell:svgcopytobuild', 
+        'shell:svgrename', 
+        'webfont:run',
+        'svg_sprite:basic',
+        'rename:main', 
+        'shell:remove_template',
+        'embedFonts', 
+        'json_generator']
+    );
 };
