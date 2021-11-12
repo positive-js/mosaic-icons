@@ -1,4 +1,13 @@
-<a name="5.2.0"></a>
+<a name="5.4.0"></a>
+## 5.4.0 (2021-11-13)
+
+###
+Moved build to figma
+
+Added icons
+bento_24
+
+<a name="5.3.0"></a>
 ## 5.3.0 (2021-03-17)
 
 ###
