@@ -46,6 +46,6 @@ jobs:
 
             - name: Build
               run: |
-                sudo apt-get install fontforge
+                sudo apt-get install fontforge python3-fontforge
                 npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
 
