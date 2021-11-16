@@ -46,6 +46,6 @@ jobs:
 
             - name: Build
               run: |
-                sudo apt-get install fontforge python3-fontforge
+                sudo apt-get install -y -qq build-essential fontforge g++ gcc python-dev python3-fontforge ttfautohint
                 npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
 
