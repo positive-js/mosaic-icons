@@ -379,6 +379,9 @@ module.exports = function (grunt) {
             },
             svgcopytobuild: {
                 command: 'mkdir -p ' + PATH_DIST_SVG + '; cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
+            },
+            copyFigmaConfig: {
+                command: 'cp icons-config.json.template icons-config.json'
             }
         },
         rename: {
@@ -414,7 +417,15 @@ module.exports = function (grunt) {
                 // { from: /<desc>(.*?)<\/desc>\n/m, to: '' },
                 // { from: /<title>(.*?)<\/title>\n/m, to: '' },
                 ]
-                }
+            },
+            figmaPersonalToken: {
+                src: ['icons-config.json'],
+                overwrite: true,
+                replacements: [
+                    { from: "{FIGMA_TOKEN_PLACEHOLDER}", to: grunt.option('FIGMA_TOKEN') || undefined }
+                ]
+            }
+
         },
         svg_sprite: {
             basic: {
@@ -454,33 +465,41 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-json-generator');
 
     grunt.registerTask('publish',
-        ['shell:cleanup', 
-        'shell:figmaexport',
-        'shell:svgfromsubfolder', 
-        'replace:remove_mask', 
-        'shell:svgcopytobuild', 
-        'shell:svgrename', 
-        'webfont:run', 
-        'svg_sprite:basic',
-        'rename:main',
-        'shell:remove_template',
-        'embedFonts', 
-        'json_generator', 
-        'shell:publish']
+        [
+            'shell:cleanup',
+            'shell:copyFigmaConfig',
+            'replace:figmaPersonalToken',
+            'shell:figmaexport',
+            'shell:svgfromsubfolder',
+            'replace:remove_mask',
+            'shell:svgcopytobuild',
+            'shell:svgrename',
+            'webfont:run',
+            'svg_sprite:basic',
+            'rename:main',
+            'shell:remove_template',
+            'embedFonts',
+            'json_generator',
+            'shell:publish'
+        ]
     );
 
     grunt.registerTask('default',
-        ['shell:cleanup', 
-        'shell:figmaexport', 
-        'shell:svgfromsubfolder', 
-        'replace:remove_mask', 
-        'shell:svgcopytobuild', 
-        'shell:svgrename', 
-        'webfont:run',
-        'svg_sprite:basic',
-        'rename:main', 
-        'shell:remove_template',
-        'embedFonts', 
-        'json_generator']
+        [
+            'shell:cleanup',
+            'shell:copyFigmaConfig',
+            'replace:figmaPersonalToken',
+            'shell:figmaexport',
+            'shell:svgfromsubfolder',
+            'replace:remove_mask',
+            'shell:svgcopytobuild',
+            'shell:svgrename',
+            'webfont:run',
+            'svg_sprite:basic',
+            'rename:main',
+            'shell:remove_template',
+            'embedFonts',
+            'json_generator'
+        ]
     );
 };
