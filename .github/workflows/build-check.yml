@@ -45,12 +45,8 @@ jobs:
               run: yarn install --immutable
 
             - name: Install fontforge
-              run: |
-                  sudo apt-get update;
-                  sudo apt-get install software-properties-common;
-                  sudo add-apt-repository ppa:fontforge/fontforge -y;
-                  sudo apt-get install fontforge;
+              run: sudo apt-get install fontforge
 
             - name: Build
-              run: npx grunt --verbose --FIGMA_TOKEN=${FIGMA_TOKEN}
+              run: npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
 
