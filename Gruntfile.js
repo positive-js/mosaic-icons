@@ -464,42 +464,29 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-json-generator');
 
+    const commonTasks = [
+        'shell:cleanup',
+        'shell:copyFigmaConfig',
+        'replace:figmaPersonalToken',
+        'shell:figmaexport',
+        'shell:svgfromsubfolder',
+        'replace:remove_mask',
+        'shell:svgcopytobuild',
+        'shell:svgrename',
+        'webfont:run',
+        'svg_sprite:basic',
+        'rename:main',
+        'shell:remove_template',
+        'embedFonts',
+        'json_generator'
+    ];
+
     grunt.registerTask('publish',
         [
-            'shell:cleanup',
-            'shell:copyFigmaConfig',
-            'replace:figmaPersonalToken',
-            'shell:figmaexport',
-            'shell:svgfromsubfolder',
-            'replace:remove_mask',
-            'shell:svgcopytobuild',
-            'shell:svgrename',
-            'webfont:run',
-            'svg_sprite:basic',
-            'rename:main',
-            'shell:remove_template',
-            'embedFonts',
-            'json_generator',
+            ...commonTasks,
             'shell:publish'
         ]
     );
 
-    grunt.registerTask('default',
-        [
-            'shell:cleanup',
-            'shell:copyFigmaConfig',
-            'replace:figmaPersonalToken',
-            'shell:figmaexport',
-            'shell:svgfromsubfolder',
-            'replace:remove_mask',
-            'shell:svgcopytobuild',
-            'shell:svgrename',
-            'webfont:run',
-            'svg_sprite:basic',
-            'rename:main',
-            'shell:remove_template',
-            'embedFonts',
-            'json_generator'
-        ]
-    );
+    grunt.registerTask('default', commonTasks);
 };
