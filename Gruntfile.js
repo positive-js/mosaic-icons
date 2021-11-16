@@ -95,7 +95,7 @@ var ICONS = {
     },
     "search_16": {
         code: 0xF118,
-        tags: ["find", "magnifier", "лупа", "поиск", "искать"]
+        tags: ["search", "find", "magnifier", "лупа", "поиск", "искать"]
     },
     "download_16": {
         code: 0xF119,
@@ -236,6 +236,70 @@ var ICONS = {
     "bento_24" : {
         code: 0xF13B,
         tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
+    },
+    "angle-down-L_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вниз", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-down-M_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вниз", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-left-L_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка влево", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-left-M_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка влево", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-right-L_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вправо", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-right-M_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вправо", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-up-L_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вверх", "уголок", "свернуть", "развернуть"]
+    },
+    "angle-up-M_24": {
+        code: 0xF101,
+        tags: ["expand", "collapse", "стрелка вверх", "уголок", "свернуть", "развернуть"]
+    },
+    "bell-o_24": {
+        code: 0xF101,
+        tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
+    },
+    "chart-bar_24": {
+        code: 0xF101,
+        tags: ["chart", "dashboard", "дашборд", "график", "диаграмма"]
+    },
+    "ellipsis_24": {
+        code: 0xF101,
+        tags: ["menu", "меню", "многоточие"]
+    },
+    "folder-open-o_24": {
+        code: 0xF101,
+        tags: ["directory", "папка", "директория"]
+    },
+    "list_24": {
+        code: 0xF101,
+        tags: ["list", "список"]
+    },
+    "question-circle_24": {
+        code: 0xF101,
+        tags: ["help", "question", "hint", "справка", "подсказка", "вопрос"]
+    },
+    "search_24": {
+        code: 0xF101,
+        tags: ["search", "find", "magnifier", "лупа", "поиск", "искать"]
+    },
+    "user-o_24": {
+        code: 0xF101,
+        tags: ["user", "human", "person", "account", "profile", "пользователь", "человек", "учетная запись", "профиль"]
     }
 };
 

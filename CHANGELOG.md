@@ -1,11 +1,27 @@
 <a name="5.4.0"></a>
-## 5.4.0 (2021-11-13)
+## 5.4.0 (2021-11-16)
 
 ###
 Moved build to figma
 
 Added icons
 bento_24
+angle-down-L_24
+angle-down-M_24
+angle-left-L_24
+angle-left-M_24
+angle-right-L_24
+angle-right-M_24
+angle-up-L_24
+angle-up-M_24
+bell-o_24
+chart-bar_24
+ellipsis_24
+folder-open-o_24
+list_24
+question-circle_24
+search_24
+user-o_24
 
 <a name="5.3.0"></a>
 ## 5.3.0 (2021-03-17)
