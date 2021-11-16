@@ -44,8 +44,9 @@ jobs:
               if: steps.modules-cache.outputs.cache-hit != 'true'
               run: yarn install --immutable
 
+            - name: Install fontforge
+              run: sudo apt-get update && sudo apt-get install fontforge ttfautohint python3-fontforge
+
             - name: Build
-              run: |
-                sudo apt-get install -y -qq build-essential fontforge g++ gcc python-dev python3-fontforge ttfautohint
-                npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
+              run: npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
 
