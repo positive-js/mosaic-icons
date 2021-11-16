@@ -387,8 +387,8 @@ module.exports = function (grunt) {
         rename: {
             main: {
                 files: [
-                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf' },
-                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff' },
+                    { src: [PATH_DIST_FONTS + '/' + 'Mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf' },
+                    { src: [PATH_DIST_FONTS + '/' + 'Mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff' },
                     { src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html' },
                     { src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less' },
                     { src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss' },
