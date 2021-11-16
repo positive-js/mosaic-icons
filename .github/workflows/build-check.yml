@@ -44,9 +44,6 @@ jobs:
               if: steps.modules-cache.outputs.cache-hit != 'true'
               run: yarn install --immutable
 
-            - name: Install fontforge
-
-
             - name: Build
               run: |
                 sudo apt-get install fontforge
