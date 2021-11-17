@@ -1,0 +1,52 @@
+name: "Publish To NPM"
+
+on:
+    push:
+        branches:
+            - 'master'
+        tags:
+            - '*.*.*'
+
+jobs:
+    action:
+        name: Release and Deploy
+        runs-on: ubuntu-latest
+
+        env:
+            FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+
+        steps:
+            - name: Git checkout
+              uses: actions/checkout@v2
+              with:
+                  persist-credentials: false
+
+            - name: Use Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14.17.0
+
+            - name: Use node_modules cache
+              uses: actions/cache@v2
+              id: modules-cache
+              with:
+                  path: '**/node_modules'
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-modules-
+
+            - name: Install dependencies
+              if: steps.modules-cache.outputs.cache-hit != 'true'
+              run: yarn install --immutable
+
+            - name: Install fontforge
+              run: sudo apt-get install woff2 fontforge ttfautohint
+
+            - name: Build
+              run: npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
+
+            - name: NPM publish
+              id: publish
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.NPM_AUTH_TOKEN }}
+                  tag: 'latest'

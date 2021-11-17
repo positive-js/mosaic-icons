@@ -379,15 +379,18 @@ module.exports = function (grunt) {
             },
             svgcopytobuild: {
                 command: 'mkdir -p ' + PATH_DIST_SVG + '; cd ' + PATH_BUILD_ICONS + ' && for f in *.svg; do cp "$f" "../../dist/svg/$f"; done'
+            },
+            copyFigmaConfig: {
+                command: 'cp icons-config.json.template icons-config.json'
             }
         },
         rename: {
             main: {
                 files: [
-                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf' },
-                    { src: [PATH_DIST_FONTS + '/' + 'mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff' },
-                    { src: [PATH_DIST_HTML + '/' + 'mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html' },
-                    { src: [PATH_DIST_STYLES + '/' + 'mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less' },
+                    { src: [PATH_DIST_FONTS + '/' + 'Mosaic.ttf'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.ttf' },
+                    { src: [PATH_DIST_FONTS + '/' + 'Mosaic.woff'], dest: PATH_DIST_FONTS + '/' + 'mc-icons.woff' },
+                    { src: [PATH_DIST_HTML + '/' + 'Mosaic.html'], dest: PATH_DIST_HTML + '/' + 'mc-icons.html' },
+                    { src: [PATH_DIST_STYLES + '/' + 'Mosaic.less'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.less' },
                     { src: [PATH_DIST_STYLES + '/' + '_Mosaic.scss'], dest: PATH_DIST_STYLES + '/' + '_mc-icons.scss' },
                     { src: [PATH_DIST_STYLES + '/' + 'Mosaic.css'], dest: PATH_DIST_STYLES + '/' + 'mc-icons.css' }
                 ]
@@ -414,7 +417,15 @@ module.exports = function (grunt) {
                 // { from: /<desc>(.*?)<\/desc>\n/m, to: '' },
                 // { from: /<title>(.*?)<\/title>\n/m, to: '' },
                 ]
-                }
+            },
+            figmaPersonalToken: {
+                src: ['icons-config.json'],
+                overwrite: true,
+                replacements: [
+                    { from: "{FIGMA_TOKEN_PLACEHOLDER}", to: grunt.option('FIGMA_TOKEN') || undefined }
+                ]
+            }
+
         },
         svg_sprite: {
             basic: {
@@ -453,34 +464,29 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-json-generator');
 
-    grunt.registerTask('publish',
-        ['shell:cleanup', 
+    const commonTasks = [
+        'shell:cleanup',
+        'shell:copyFigmaConfig',
+        'replace:figmaPersonalToken',
         'shell:figmaexport',
-        'shell:svgfromsubfolder', 
-        'replace:remove_mask', 
-        'shell:svgcopytobuild', 
-        'shell:svgrename', 
-        'webfont:run', 
+        'shell:svgfromsubfolder',
+        'replace:remove_mask',
+        'shell:svgcopytobuild',
+        'shell:svgrename',
+        'webfont:run',
         'svg_sprite:basic',
         'rename:main',
         'shell:remove_template',
-        'embedFonts', 
-        'json_generator', 
-        'shell:publish']
+        'embedFonts',
+        'json_generator'
+    ];
+
+    grunt.registerTask('publish',
+        [
+            ...commonTasks,
+            'shell:publish'
+        ]
     );
 
-    grunt.registerTask('default',
-        ['shell:cleanup', 
-        'shell:figmaexport', 
-        'shell:svgfromsubfolder', 
-        'replace:remove_mask', 
-        'shell:svgcopytobuild', 
-        'shell:svgrename', 
-        'webfont:run',
-        'svg_sprite:basic',
-        'rename:main', 
-        'shell:remove_template',
-        'embedFonts', 
-        'json_generator']
-    );
+    grunt.registerTask('default', commonTasks);
 };
