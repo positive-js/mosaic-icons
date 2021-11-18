@@ -2,14 +2,13 @@ name: "Publish To NPM"
 
 on:
     push:
-        branches:
-            - 'master'
         tags:
             - '*.*.*'
 
 jobs:
-    action:
-        name: Release and Deploy
+    build-and-publish:
+        if: github.event.base_ref == 'refs/heads/master'
+        name: Build and Publish
         runs-on: ubuntu-latest
 
         env:
