@@ -1,3 +1,14 @@
+<a name="6.0.0"></a>
+## 6.0.0 (2021-11-16)
+
+###
+Fixed codepoints for icons
+
+Breaking changes:
+TW: changed code for icons added in 5.4.0
+UI: no breaking changes
+UX: no breaking changes
+
 <a name="5.4.0"></a>
 ## 5.4.0 (2021-11-16)
 
