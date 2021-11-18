@@ -1,4 +1,4 @@
-var FONT_VERSION = '5.4.0';
+var FONT_VERSION = '6.0.0';
 
 var ICONS = {
     "angle-down-L_16": {
@@ -238,67 +238,67 @@ var ICONS = {
         tags: ["hamburger", "bento", "menu", "гамбургер", "бенто", "меню"]
     },
     "angle-down-L_24": {
-        code: 0xF101,
+        code: 0xF13C,
         tags: ["expand", "collapse", "стрелка вниз", "уголок", "свернуть", "развернуть"]
     },
     "angle-down-M_24": {
-        code: 0xF101,
+        code: 0xF13D,
         tags: ["expand", "collapse", "стрелка вниз", "уголок", "свернуть", "развернуть"]
     },
     "angle-left-L_24": {
-        code: 0xF101,
+        code: 0xF13E,
         tags: ["expand", "collapse", "стрелка влево", "уголок", "свернуть", "развернуть"]
     },
     "angle-left-M_24": {
-        code: 0xF101,
+        code: 0xF13F,
         tags: ["expand", "collapse", "стрелка влево", "уголок", "свернуть", "развернуть"]
     },
     "angle-right-L_24": {
-        code: 0xF101,
+        code: 0xF140,
         tags: ["expand", "collapse", "стрелка вправо", "уголок", "свернуть", "развернуть"]
     },
     "angle-right-M_24": {
-        code: 0xF101,
+        code: 0xF141,
         tags: ["expand", "collapse", "стрелка вправо", "уголок", "свернуть", "развернуть"]
     },
     "angle-up-L_24": {
-        code: 0xF101,
+        code: 0xF142,
         tags: ["expand", "collapse", "стрелка вверх", "уголок", "свернуть", "развернуть"]
     },
     "angle-up-M_24": {
-        code: 0xF101,
+        code: 0xF143,
         tags: ["expand", "collapse", "стрелка вверх", "уголок", "свернуть", "развернуть"]
     },
     "bell-o_24": {
-        code: 0xF101,
+        code: 0xF144,
         tags: ["alarm", "notification", "будильник", "колокольчик", "уведомление"]
     },
     "chart-bar_24": {
-        code: 0xF101,
+        code: 0xF145,
         tags: ["chart", "dashboard", "дашборд", "график", "диаграмма"]
     },
     "ellipsis_24": {
-        code: 0xF101,
+        code: 0xF146,
         tags: ["menu", "меню", "многоточие"]
     },
     "folder-open-o_24": {
-        code: 0xF101,
+        code: 0xF147,
         tags: ["directory", "папка", "директория"]
     },
     "list_24": {
-        code: 0xF101,
+        code: 0xF148,
         tags: ["list", "список"]
     },
     "question-circle_24": {
-        code: 0xF101,
+        code: 0xF149,
         tags: ["help", "question", "hint", "справка", "подсказка", "вопрос"]
     },
     "search_24": {
-        code: 0xF101,
+        code: 0xF150,
         tags: ["search", "find", "magnifier", "лупа", "поиск", "искать"]
     },
     "user-o_24": {
-        code: 0xF101,
+        code: 0xF151,
         tags: ["user", "human", "person", "account", "profile", "пользователь", "человек", "учетная запись", "профиль"]
     }
 };
