@@ -466,8 +466,6 @@ module.exports = function (grunt) {
 
     const commonTasks = [
         'shell:cleanup',
-        'shell:copyFigmaConfig',
-        'replace:figmaPersonalToken',
         'shell:figmaexport',
         'shell:svgfromsubfolder',
         'replace:remove_mask',
@@ -483,6 +481,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('publish',
         [
+            'shell:copyFigmaConfig',
+            'replace:figmaPersonalToken',
             ...commonTasks,
             'shell:publish'
         ]
