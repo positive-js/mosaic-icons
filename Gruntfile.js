@@ -300,6 +300,10 @@ var ICONS = {
     "user-o_24": {
         code: 0xF151,
         tags: ["user", "human", "person", "account", "profile", "пользователь", "человек", "учетная запись", "профиль"]
+    },
+    "user_16": {
+        code: 0xF152,
+        tags: ["user", "human", "person", "account", "profile", "пользователь", "человек", "учетная запись", "профиль"]
     }
 };
 
