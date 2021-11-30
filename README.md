@@ -77,6 +77,6 @@ Run commands:
 7. Change version in *package.json*.
 8. Change version in *Gruntfile.js*.
 9. Commit *package.json*, *Gruntfile.js* and *CHANGELOG.md*. Commit message: *Bumped version number to %version%*.
-10. Add tag *version* and push it. It will trigger build and publish to global npm.
+10. Add tag with *%version%* and push it. It will trigger build and publish to global npm.
 
 You are free to drink a cup of coffee.
