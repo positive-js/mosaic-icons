@@ -3,12 +3,12 @@ name: "Publish To NPM"
 on:
     push:
         tags:
-            - '*.*.*'
+            - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
     build-and-publish:
         if: github.event.base_ref == 'refs/heads/master'
-        name: Build and Publish
+
         runs-on: ubuntu-latest
 
         env:
