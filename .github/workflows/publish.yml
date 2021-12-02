@@ -37,7 +37,7 @@ jobs:
               run: yarn install --immutable
 
             - name: Install fontforge
-              run: sudo apt-get install woff2 fontforge ttfautohint
+              run:  sudo apt-get update && sudo apt-get install woff2 fontforge ttfautohint
 
             - name: Build
               run: npx grunt build:ci --FIGMA_TOKEN=${FIGMA_TOKEN}
