@@ -492,6 +492,13 @@ module.exports = function (grunt) {
         ]
     );
 
+    grunt.registerTask('build:ci', [
+        'shell:cleanup',
+        'shell:copyFigmaConfig',
+        'replace:figmaPersonalToken',
+        ...commonTasks
+    ]);
+
     grunt.registerTask('default', [
         'shell:cleanup',
         ...commonTasks

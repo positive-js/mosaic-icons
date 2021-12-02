@@ -44,4 +44,4 @@ jobs:
               run: sudo apt-get install woff2 fontforge ttfautohint
 
             - name: Build
-              run: npx grunt --FIGMA_TOKEN=${FIGMA_TOKEN}
+              run: npx grunt build:ci --FIGMA_TOKEN=${FIGMA_TOKEN}
