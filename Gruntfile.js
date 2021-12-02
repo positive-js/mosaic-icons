@@ -469,7 +469,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-json-generator');
 
     const commonTasks = [
-        'shell:cleanup',
         'shell:figmaexport',
         'shell:svgfromsubfolder',
         'replace:remove_mask',
@@ -485,6 +484,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('publish',
         [
+            'shell:cleanup',
             'shell:copyFigmaConfig',
             'replace:figmaPersonalToken',
             ...commonTasks,
@@ -492,5 +492,8 @@ module.exports = function (grunt) {
         ]
     );
 
-    grunt.registerTask('default', commonTasks);
+    grunt.registerTask('default', [
+        'shell:cleanup',
+        ...commonTasks
+    ]);
 };
