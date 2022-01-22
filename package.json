@@ -4,7 +4,8 @@
     "description": "Icons for Mosaic",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "export-icons": "export-icons"
+        "export-icons": "export-icons",
+        "start": "gulp --require ts-node/register/transpile-only"
     },
     "repository": {
         "type": "git",
@@ -23,7 +24,11 @@
     },
     "homepage": "https://github.com/positive-js/mosaic-icons#readme",
     "devDependencies": {
+        "@types/gulp": "^4.0.6",
+        "@types/node": "^16.11.21",
         "figma-export-icons": "^1.5.0",
+        "gulp-iconfont": "^11.0.1",
+        "gulp-iconfont-css": "^3.0.0",
         "grunt": "^1.4.1",
         "grunt-embed-fonts": "^1.0.3",
         "grunt-json-generator": "^0.1.0",
@@ -31,6 +36,9 @@
         "grunt-shell": "^3.0.1",
         "grunt-svg-sprite": "^1.5.0",
         "grunt-text-replace": "^0.4.0",
-        "grunt-webfont": "^1.7.2"
+        "grunt-webfont": "^1.7.2",
+        "gulp": "^4.0.2",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.5.5"
     }
 }
