@@ -4,8 +4,6 @@ import iconfont from 'gulp-iconfont';
 import iconfontCss from 'gulp-iconfont-css';
 
 const source: string[] = ['build/icons/*.svg'];
-
-
 const targetDir = path.resolve(__dirname, 'dist/');
 const fontCssConfig = {
     fontName: 'mc',
@@ -36,8 +34,7 @@ const generateIconFont = ({
                 iconfont({
                     fontName: 'mc',
                     prependUnicode: true,
-                    // 'woff2' and 'svg' are available
-                    formats: ['svg', 'ttf', 'eot', 'woff'],
+                    formats: ['ttf', 'woff'],
                     timestamp: runTimestamp,
                     normalize: true,
                     fontHeight: 1024
