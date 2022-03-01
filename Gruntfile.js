@@ -1,4 +1,4 @@
-var FONT_VERSION = '6.1.1';
+var FONT_VERSION = '6.2.0';
 
 var ICONS = {
     "angle-down-L_16": {
