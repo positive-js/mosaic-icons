@@ -304,6 +304,14 @@ var ICONS = {
     "user_16": {
         code: 0xF152,
         tags: ["user", "human", "person", "account", "profile", "пользователь", "человек", "учетная запись", "профиль"]
+    },
+    "eye_16": {
+        code: 0xF153,
+        tags: ["eye", "password", "глаз", "пароль"]
+    },
+    "eye-crossed_16": {
+        code: 0xF154,
+        tags: ["eye", "password", "глаз", "пароль"]
     }
 };
 
