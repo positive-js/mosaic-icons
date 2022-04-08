@@ -312,6 +312,18 @@ var ICONS = {
     "eye-crossed_16": {
         code: 0xF154,
         tags: ["eye", "password", "глаз", "пароль"]
+    },
+    "color-palette_16": {
+        code: 0xF155,
+        tags: ["color", "palette", "цвет", "палитра"]
+    },
+    "globe_16": {
+        code: 0xF156,
+        tags: ["globe", "internet", "language", "website", "глобус", "интернет", "язык", "сайт"]
+    },
+    "theme_16": {
+        code: 0xF157,
+        tags: ["dark mode", "light mode", "темный режим", "светлый режим"]
     }
 };
 
