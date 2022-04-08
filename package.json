@@ -1,6 +1,6 @@
 {
     "name": "@ptsecurity/mosaic-icons",
-    "version": "6.2.0",
+    "version": "6.3.0",
     "description": "Icons for Mosaic",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

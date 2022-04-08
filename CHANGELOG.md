@@ -1,3 +1,10 @@
+<a name="6.3.0"></a>
+## 6.3.0. (2022-04-08)
+Added icons
+color-palette_16
+globe_16
+theme_16
+
 <a name="6.2.0"></a>
 ## 6.2.0 (2022-03-01)
 
